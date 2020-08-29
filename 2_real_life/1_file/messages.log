@@ -1,0 +1,20 @@
+Apr 20 10:03:32 my-server-host-name influxd: [query] 2017/04/20 10:03:32 SELECT mean(value) FROM db.rp.measure WHERE time > now() - 1h GROUP BY time(30s)
+Apr 20 10:03:32 my-server-host-name influxd: [query] 2017/04/20 10:03:32 SELECT mean(value2) FROM db.rp.measure WHERE time > now() - 1h GROUP BY time(30s)
+Apr 20 10:03:32 my-server-host-name influxd: [httpd] ::1 - influx_user [20/Apr/2017:10:03:32 +0400] "GET /query?db=db&epoch=ms&q=SELECT+mean....etc
+Apr 20 10:03:32 my-server-host-name influxd: [httpd] ::1 - influx_user [20/Apr/2017:10:03:32 +0400] "GET /query?db=db&epoch=ms&q=SELECT+mean%......etc
+Apr 20 10:03:37 my-server-host-name influxd: [httpd] X.X.X.X - influx_user2 [20/Apr/2017:10:03:37 +0400] "POST /write?db=db&p=%5BREDACTED%5D&precision=ms&rp=rp&u=influx_user2 HTTP/1.1" 204 0 "-" "python-requests/2.11.0" 1864a5ab-258f-11e7-8309-000000000000 18886
+Apr 20 10:03:41 my-server-host-name telegraf: 2017/04/20 10:03:41 I! Output [influxdb] buffer fullness: 30 / 10000 metrics. Total gathered metrics: 35263075. Total dropped metrics: 0.
+Apr 20 10:03:41 my-server-host-name telegraf: 2017/04/20 10:03:41 I! Output [influxdb] wrote batch of 30 metrics in 223.127Âµs
+Apr 20 10:04:06 my-server-host-name influxd: [httpd] X.X.X.X - influx_user2 [20/Apr/2017:10:04:06 +0400] "POST /write?db=db&p=%5BREDACTED%5D&precision=ms&rp=rp&u=influx_user2 HTTP/1.1" 204 0 "-" "python-requests/2.4.3 CPython/2.7.9 Linux/3.16.0-4-amd64" 29b25ca8-258f-11e7-83fc-000000000000 8499
+Apr 20 10:04:06 my-server-host-name influxd: [httpd] X.X.X.X - influx_user2 [20/Apr/2017:10:04:06 +0400] "POST /write?db=db&p=%5BREDACTED%5D&precision=ms&rp=rp&u=influx_user2 HTTP/1.1" 204 0 "-" "python-requests/2.4.3 CPython/2.7.9 Linux/3.16.0-4-amd64" 29b33168-258f-11e7-83fd-000000000000 10269
+Sep 11 09:46:33 sys1 crontab[20601]: (root) BEGIN EDIT (root)
+Sep 11 09:46:39 sys1 crontab[20601]: (root) REPLACE (root)
+Sep 11 09:46:39 sys1 crontab[20601]: (root) END EDIT (root)
+Dec 19 07:35:21 localhost exiting on signal 15
+Dec 19 16:49:31 localhost syslogd 1.4.1#17ubuntu3: restart.
+Jun  1 22:20:05 secserv kernel: Kernel logging (proc) stopped.
+Jun  1 22:20:05 secserv kernel: Kernel log daemon terminating.
+Jun  1 22:20:06 secserv exiting on signal 15
+Nov 27 08:05:57 galileo kernel: Kernel logging (proc) stopped.
+Nov 27 08:05:57 galileo kernel: Kernel log daemon terminating.
+Nov 27 08:05:57 galileo exiting on signal 15
