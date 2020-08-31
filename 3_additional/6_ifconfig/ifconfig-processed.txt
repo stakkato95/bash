@@ -1,0 +1,29 @@
+1bradfea1a57e53: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+2:        inet 10.0.43.128  netmask 255.255.255.0  broadcast 10.0.43.255
+3        ether 02:42:c5:33:47:91  txqueuelen 0  (Ethernet)
+
+9brf5d0ed10a17a: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+10:        inet 10.0.42.128  netmask 255.255.255.0  broadcast 10.0.42.255
+11        ether 02:42:b6:c7:d7:7c  txqueuelen 0  (Ethernet)
+
+17docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+18:        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+19        ether 02:42:8d:7b:ef:63  txqueuelen 0  (Ethernet)
+
+25docker_gwbridge: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+26:        inet 172.18.0.1  netmask 255.255.0.0  broadcast 172.18.255.255
+28        ether 02:42:f2:68:ba:cf  txqueuelen 0  (Ethernet)
+
+34lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+35:        inet 127.0.0.1  netmask 255.0.0.0
+37        loop  txqueuelen 1000  (Local Loopback)
+
+43veth2ca3744: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+45        ether 32:df:5f:d7:c0:4e  txqueuelen 0  (Ethernet)
+
+51vethbc12604: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+53        ether fa:b6:40:89:ed:ee  txqueuelen 0  (Ethernet)
+
+59wlp4s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+60:        inet 192.168.1.101  netmask 255.255.255.0  broadcast 192.168.1.255
+62        ether f4:5c:89:c6:72:45  txqueuelen 1000  (Ethernet)
