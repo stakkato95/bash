@@ -1,0 +1,17 @@
+systemd-+-accounts-daemon---2*[{accounts-daemon}]
+        |-agetty
+        |-atd
+        |-cron
+        |-dbus-daemon
+        |-networkd-dispat
+        |-polkitd---2*[{polkitd}]
+        |-rsyslogd---2*[{rsyslogd}]
+        |-snapd---24*[{snapd}]
+        |-6*[snapfuse]
+        |-sshd
+        |-systemd-journal
+        |-systemd-logind
+        |-systemd-network
+        |-systemd-resolve
+        |-systemd-udevd
+        `-unattended-upgr---{unattended-upgr}
