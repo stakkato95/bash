@@ -1,0 +1,4 @@
+user,group,pwdhash,home
+john,1000,$6$Tmdav3f0x34UKDuF$KbkLavP7cWLqcVDeGo.vXeq4KNlFxN8X5Ku939vPmXat9hJnh3EDTlOrR8zDUCpTbAFbKfBNZ0/hDtN6JyZ1X0,/home/john
+jane,1000,$6$fwf0nWYt$bCHdSQGpi76gWynjOAUpTwLXXmSD6fZXBQvEwsTZcATpM/pyj2Vt8Bp0l45tnP7VOJ9Rnm5ER3RkssZPZYpu..,/home/jane
+mike,1000,$6$fwf0nWYt$bCHdSQGpi76gWynjOAUpTwLXXmSD6fZXBQvEwsTZcATpM/pyj2Vt8Bp0l45tnP7VOJ9Rnm5ER3RkssZPZYpu..,/home/mike
