@@ -20,6 +20,6 @@ do
 	echo $shadow_line >> /etc/shadow
 
 	# create home
-	username=$(echo $line | awk -F"," '{print $1}')
+	username=$(echo $line | awk -F"," '{print $4}')
 	mkdir $username
 done
