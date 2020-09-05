@@ -14,3 +14,15 @@ mtr onliner.by
 
 # track TCP packet transfer
 sudo tcpdump -As0 -i any port 80 and host 77.88.55.80
+
+# show mail servers
+dig MX google.com
+
+# debug NTP protocol
+ntpdate -d -b ntp.zenon.net
+
+# check thertificates of google
+openssl s_client -connect www.google.com:443
+
+# check google's certificate content
+openssl asn1parse -in google.crt
