@@ -26,3 +26,22 @@ openssl s_client -connect www.google.com:443
 
 # check google's certificate content
 openssl asn1parse -in google.crt
+
+# show info about ethernet cards
+ethtool -S eth0
+
+# show info about WLAN card
+iwconfig
+
+# settings of a socket in kernel
+sysctl net.ipv4.tcp_wmem # TX - transmit | SO_SNDBUF
+sysctl net.ipv4.tcp_rmem # RX - receive | SO_RCVBUF
+
+# show HTTP2 packages
+nghttp -nv https://www.facebook.com
+
+# list ipv4 settings
+cat /proc/sys/net/ipv4
+
+# check congestion control algorithm
+cat /proc/sys/net/ipv4/tcp_congestion_control
