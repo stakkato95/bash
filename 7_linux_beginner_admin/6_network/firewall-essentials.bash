@@ -111,6 +111,36 @@ sudo iptables -t filter -A INPUT -s 178.124.129.16 -j DROP
 # SNAT is done in POSTROUTING (aka MASQUERADE)
 https://www.netfilter.org/documentation/HOWTO/NAT-HOWTO-6.html
 
+# create a firewall declining all incoming connections
+sudo modprobe iptable_nat
+sudo modprobe ip_nat_ftp
+sudo iptable -P INPUT DROP
+sudo iptable -P FORWARD DROP
+sudo iptable -P OUTPUT DROP
+sudo iptable -t nat -P POSTROUTING ACCEPT # -P defines default policy
+sudo iptable -t nat -P PREROUTING ACCEPT
+# define new chain allowing new connection only from the private network (eth1), not from the internet (eth0)
+sudo iptables -N block
+sudo iptables -A block -m state --state ESTABLISHED,RELATED -j ACCEPT #load module "state" and allow established connections
+sudo iptables -A block -m state --state NEW ! -i eth0 -j ACCEPT # allow new connections coming NOT from the internet
+sudo iptables -A block -j DROP 
+# call "block" chain from INPUT and FORWARD chains
+sudo iptables -A INPUT -j block
+sudo iptables -A FORWARD -j block
+# apply masquerading (aka SNAT) to outgoing connections from interface eth0, i.e. going to the internet
+sudo iptable -t nat -A POSTROUTING -o eth0 -j MASQUERADE	
+# enable ip forwarding and SYN cookie protection, ignore ICMP broadcasts
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+echo 1 | sudo tee /proc/sys/net/ipv4/tcp_syncookies
+echo 1 | sudo tee /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts 
+# enable SSH to a host behind NAT and enable usage of a torrent client behind NAT
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp -dport 22 -j DNAT --to-destination 172.16.1.3 --dport 22 -j ACCEPT
+sudo iptables -I FORWARD -p tcp -d 172.16.1.3 --dport 22 -j ACCEPT #after destination is changed, allow forwarding it to target host
+# enable torrent
+sudo iptables -t nat -A PREROUTING -t etho -p tcp -dport 6881:6889 -j DNAT --to-destination 172.16.1.2
+sudo iptables -I FORWARD -p tcp -d 172.16.1.2 --dport 6881:6889 -j ACCEPT
+
+
 https://www.debuntu.org/how-to-redirecting-network-traffic-to-a-new-ip-using-iptables/
 http://gsoc-blog.ecklm.com/iptables-redirect-vs.-dnat-vs.-tproxy/
 http://linux-ip.net/html/nat-dnat.html
