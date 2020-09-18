@@ -25,3 +25,8 @@ sudo docker cp containername:/test/hello/* ./
 
 # copy host file to container file
 sudo docker cp fileon.host  containername:fileon.container
+
+# host    volume "docker run -v hostpath:contpath"      - maping host path <--> container path
+# anonym. volume "docker run -v contpath"               - mount vol at contpath, shareable w/ other cont. "--volumes-from", vol is del when cont. is del
+# named   volume "docker run -v dockervolname:contpath" - mount vol at contpath, vol is managed by docker and has a name, vol is not del when cont. is del
+# https://spin.atomicobject.com/2019/07/11/docker-volumes-explained/
